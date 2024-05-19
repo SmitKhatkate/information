@@ -1,0 +1,475 @@
+text-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f, 0 0 40px #00f;
+
+      React – steps   .
+React is all about component-means reusable  block.
+Use for single page application.
+React is js library to build interface.
+Installation:-
+first install node js
+install react developer tool extention
+add thunder client extention in vs code and es7react/redux/graphql extention also
+others also like bracket pair coloriser,auto rename tag
+go to folder in vs and goto terminal
+npm install -g  create-react-app (takes space)
+type n
+npx create-react-app my-app
+npx create-react-app my-app
+cd my-app
+npm start
+
+if this will not work then clear delet the terminal
+to run the app npm-start
+
+
+SPA=single page application
+only component will reload not all webpage
+
+if you want to use bootstrap in react then script and css link needs to add in index .html in react
+“class” needs to be rename as” classname” in react
+“For” needs to replace as “htmlFor”
+need to close all ending tabs like br,img,hr
+Variable need to declare outside function
+
+
+Props
+In React.js, "props" (short for properties) are a way of passing values from parent components down to child components. They are read-only. Here's a basic example
+// Child component
+function ChildComponent(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+// Parent component
+function ParentComponent() {
+  return <ChildComponent name="John" />;
+}
+Create one js file and export whatever function or anything that helps app.js file to use by importing to app.js and call that function.
+If we want to import multiple thing then we can use start( * )
+Like
+Import * from’./file name’
+And access by
+Filename.function name
+
+Spread and rest operator
+Copy array to another array or objects and extends
+Both used by …(dot dot dot)
+Rest operator used in function parameter to extends input value in output ex:- (…all)
+Javascript runs on browser is “Javascript”
+Javascript runs on pc is “Node js”
+In app.js we are writing the main html and js functionality under one function that is called jsx
+So the flow will be like 
+First  => Index.html-create div
+write function in app.js ->then  export 
+now import that function to index.js 
+
+first in index.js file
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+then                                       web page output                                                            this is div in index.html
+ReactDOM.render(<h2>HI</h2>,document.getElementById('root'));
+
+OR by default you can use this also
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+
+If we have multiple components then you can add them in app.js by  <component/>
+Here in component we need to write the name of function written in other js file
+And import that to app.js 
+Like import function name from path
+And add that function in return <function/> do not forget to close.
+
+Hook are always starts with “use” like usestate
+Useeffect  are stopped you from unwanted loop.like while fetching API do not repeat data
+
+Import and export
+
+if you want to import any function or variable or anything 
+Then
+Import {function} from path
+And export that function from main file
+Ex- export let hello =()=>{
+Console.log(“smit”)
+}
+Main js file ;-  import {hello} from .pathname.js
+And while importing default import hello from .pathname.js
+And export as export default functionname.
+
+Destructuring
+1.array destructuring
+2.Object destructuring
+
+Let arr=[“honda”,“innova”,“Audi”];
+Let [car1,car2,car3]=arr;
+Console.log(car1);
+
+
+Const person ={
+Name:”SMit”,
+Age:33
+}
+Const {name,age}=person;
+Console.log(age)
+Note;-here we dnt need to console by obj.property only property
+
+Pass by value -primitive datatype
+Ex-let name =100;
+Let name2=name;
+Console.log(name2)  output=100 
+Which means we can copy and assign value in primitive
+
+Pass by reference -Non-primitive datatype
+Here it is not possible to copy directly
+We need to use spread operator
+
+Ex-let obj={
+Name:”Smit”
+}
+Let obj1={
+…obj
+}
+Event.preventdefault
+This helps us to do not refresh page while submitting form
+Means it will prevent other background action.
+
+
+React router
+
+Step 1 -  ctr+d
+Step 2 -  npm install react-router-dom
+Step 3 - npm install react-bootstrap bootstrap
+       Index.js  => import React from 'react'; 
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom'; 
+<BrowserRouter> <App /> </BrowserRouter>
+       Craete 3 componenets Home,About,Contact us and in that file above function
+       import React from 'react'
+And import all components in app.js file with
+import React from "react"; import { Link, Route, Routes } from "react-router-dom";
+       
+       In App.js div
+<Routes>    <Route path="/" element={<Home />} /> 
+   <Route path="/course" element={<Courses />} />  
+  <Route path="/live" element={<Live />} />  
+  <Route path="/contact" element={<Contact />} /> </Routes>
+                      
+Just above this code 
+<nav> <ul> <Link to="/" class="list"> Home </Link> <Link to="/course" class="list"> Courses </Link> <Link to="/live" class="list"> Live course </Link> <Link to="/contact" class="list"> Contact </Link> </ul> </nav>
+
+Ex-
+index
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from "react-router-dom";
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+App
+
+import { Routes,Route,Link } from 'react-router-dom';
+import './App.css';
+import Home from './component/Home';
+import About from './component/About';
+import Contact from './component/Contact';
+
+function App() {
+  return (
+    <div className="App">
+      <nav> <ul> <Link to="/" class="list"> Home </Link> <Link to="/About" class="list"> About </Link> <Link to="/Contact" class="list"> Contact </Link> </ul> </nav>
+
+      <Routes>
+      <Route path='/' element={<Home />}></Route>
+      <Route path='/About' element={<About />}></Route>
+      <Route path='/Contact' element={<Contact />}></Route>
+
+      </Routes>
+        
+    </div>
+  );
+}
+
+export default App;
+
+3 components home,about,contact
+
+ import React from "react";
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+Bootsrap in React
+css
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+css
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+
+Go to index.html and above title tag paste css link and above </body> paste js link
+
+Close all tags like hr,input and replace all class with className 
+Class should be always className N is always capital
+
+----------------------------------------------------------------------------------------------------------------------------------
+But….
+If you want to use bootstrap with router then 
+
+First create react app,cd,
+install react router dom --            npm install react-router-dom
+Then install bootstrap package -- npm install react-bootstrap bootstrap
+Then npm start
+
+Add this in index.js             
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+Add this in App.js
+import {BrowserRouter,Route,Link,Routes,} from "react-router-dom";
+
+Go to react bootstrap website and choose any Navbar
+put it in div and wrap with <BrowserRouter></BrowserRouter>
+Jus below Navbar Routes,Route need to use
+<Routes>
+          <Route path='/About' element={<About/>}></Route>
+          <Route path='/Home' element={<Home/>}></Route>
+          <Route path='/Contact' element={<Contact/>}></Route>
+</Routes>
+
+Import the content to App.js like
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+
+Create files and import in App.js
+import { About } from './About';
+import { Home } from './Home';
+import { Contact } from './Contact';
+
+
+
+Ex-
+App.js
+
+import './App.css';
+
+import React from 'react';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import {
+  BrowserRouter,
+  Route,
+  Link,
+  Routes,
+} from "react-router-dom";
+import { About } from './About';
+import { Home } from './Home';
+import { Contact } from './Contact';
+
+function App() {
+  return (
+    <BrowserRouter>
+    <div className='App'>
+    <Navbar bg="dark" data-bs-theme="dark">
+        <Container>
+          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link as={Link} to="/Home">Home</Nav.Link>
+            <Nav.Link as={Link} to="/About">About</Nav.Link>
+            <Nav.Link as={Link} to="/Contact">Contact</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+    <Routes>
+          <Route path='/About' element={<About/>}></Route>
+          <Route path='/Home' element={<Home/>}></Route>
+          <Route path='/Contact' element={<Contact/>}></Route>
+          </Routes>
+    </div>
+     
+     
+    </BrowserRouter>
+  );
+}
+
+export default App;
+
+
+Index.js
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css';
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+
+
+Extra extra large (xxl): For viewports with a width ≥1400px, your container will have a maximum width of 1320px.
+Extra large (xl): For viewports with a width ≥1200px, your container will have a maximum width of 1140px.
+Large (lg): For viewports with a width ≥992px, your container will have a maximum width of 960px.
+Medium (md): For viewports with a width ≥768px, your container will have a maximum width of 720px.
+Small (sm): For viewports with a width ≥576px, your container will have a maximum width of 540px.
+Fluid: This container is 100% wide all the time.
+
+
+States :-  if we want to change anything on dom like in javascript document.getelementbyid then same work we are doing in react with states
+
+Import {useState} from react 
+
+Ex- <div>
+            <div className='date'>{day}</div>
+            <div className='date'>{month}</div>
+            <div className='date'>{year}</div>
+            
+            </div>
+            <div>
+                <h2>{props.title}</h2>
+            </div>
+            <div>${props.amount}</div>    
+            <button onClick={clickHandler}>click me</button>
+        </div>
+
+
+From above example if we want to click button and need to change the title then,
+import './ExpenseItem.css';
+import React from 'react';
+import { useState } from 'react';
+
+export const ExpenseItem = (props) => {
+  const month = props.date.toLocaleString('en-US', { month: 'long' });
+  const year = props.date.getFullYear();
+  const day = props.date.toLocaleString('en-US', { day: '2-digit' });
+
+  const [title, setTitle] = useState(props.title);
+  const [color, setColor] = useState('');
+
+  const clickHandler = () => {
+    setTitle("New title");
+    setColor('red');
+  }
+
+  return (
+    <>
+      <div className='main-div'>
+        <div>
+          <div className='date'>{day}</div>
+          <div className='date'>{month}</div>
+          <div className='date'>{year}</div>
+        </div>
+        <div>
+          <h2 style={{color: color}}>{title}</h2>
+        </div>
+        <div>${props.amount}</div>
+        <button onClick={clickHandler}>click me</button>
+      </div>
+    </>
+  )
+}
+
+
+First onclick need to implement on button
+<button onClick={clickHandler}>click me</button>
+
+So basically  first we are importing {useState}
+
+Then declaring variable with function 
+const [title, setTitle] = useState(props.title);
+
+Then action we need to perform 
+const clickHandler = () => {
+    setTitle("New title"); }
+
+
+
+If you want to change input value pressing button and show on title then 
+
+<button onClick={clickHandler}>click me</button>
+
+<div><input type="text" value={newtitle} onChange={changeHandler}/></div>
+
+const [title, setTitle] = useState(props.title);
+
+const [newtitle, setNewTitle] = useState("hi");
+
+
+const changeHandler=(event)=>{
+    setNewTitle(event.target.value)
+}
+
+
+const clickHandler = () => {
+    setTitle(newtitle);
+  }
+
+
+
+
+
+
+
+
+
+Swap function  
+
+It is very simple function used to swap the values on button
+
+Function swap() {
+setFrom(to)    // value to 1st function and variable
+setTo(From)     } // value to 2nd function and variable
+
+
+Create a single Hook that holds an object:
+function Car() {
+  const [car, setCar] = useState({
+    brand: "Ford",
+    model: "Mustang",
+    year: "1964",
+    color: "red"
+  });
+
+  return (
+    <>
+      <h1>My {car.brand}</h1>
+      <p>
+        It is a {car.color} {car.model} from {car.year}.
+      </p>
+    </>
+  )}
+
+
+

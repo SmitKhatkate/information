@@ -1,0 +1,151 @@
+#col1{
+    background-color:rgb(170, 117, 219);
+    color: white;
+    text-align: center;
+    padding: 80px;
+    line-height: 25px;
+    
+}
+#col2{
+    background-color:rgb(219, 55, 82);
+    color: white;
+    text-align: center;
+    padding: 80px;
+}
+#col3{
+    background-color:rgb(49, 47, 47);
+    color: white;
+    text-align: center;
+    padding: 80px;
+}
+#bold{
+    font-weight: bold;
+    font-size: 50px;
+    position: relative;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 2em;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes animate {
+    0% {
+      background-position: -500%;
+    }
+    100% {
+      background-position: 500%;
+    }
+  }
+#plight{
+    font-size: 20px;
+    color: rgb(19, 3, 3);
+}
+#dot{
+    color: red;
+}
+.ml-custom {
+    margin-left: 140px;
+}
+@media screen and (max-width:580px) {
+      .ml-custom{
+        margin-left:0px;
+      }
+    }
+
+    .bg-opacity {
+        position: relative;
+        z-index: 1;
+    }
+
+
+    
+    .bg-opacity::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("https://th.bing.com/th/id/R.2b25746cd9153f6b8411751d2f7b2e05?rik=zm8PAYaVrS28vw&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f06%2fTechnology-HD-Images.jpg&ehk=p8SJ1i8dLSmXSvN6rl%2bBbSXpO9wzAN87zvt2gXUSvjs%3d&risl=&pid=ImgRaw&r=0");
+        background-size: cover;
+        background-position: center;
+        opacity: 0.3; /* Set your desired opacity here */
+        z-index: -1;
+    }
+
+    .cssbuttons-io-button {
+        background: #a370f0;
+        color: white;
+        font-family: inherit;
+        padding: 0.35em;
+        padding-left: 1.2em;
+        font-size: 17px;
+        font-weight: 500;
+        border-radius: 0.9em;
+        border: none;
+        letter-spacing: 0.05em;
+        display: flex;
+        align-items: center;
+        box-shadow: inset 0 0 1.6em -0.6em #714da6;
+        overflow: hidden;
+        position: relative;
+        height: 2.8em;
+        padding-right: 3.3em;
+        cursor: pointer;
+      }
+      
+      .cssbuttons-io-button .icon {
+        background: white;
+        margin-left: 1em;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 2.2em;
+        width: 2.2em;
+        border-radius: 0.7em;
+        box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
+        right: 0.3em;
+        transition: all 0.3s;
+      }
+      
+      .cssbuttons-io-button:hover .icon {
+        width: calc(100% - 0.6em);
+      }
+      
+      .cssbuttons-io-button .icon svg {
+        width: 1.1em;
+        transition: transform 0.3s;
+        color: #7b52b9;
+      }
+      
+      .cssbuttons-io-button:hover .icon svg {
+        transform: translateX(0.1em);
+      }
+      
+      .cssbuttons-io-button:active .icon {
+        transform: scale(0.95);
+      }
+#lastdivs{
+    background-color: black;
+    color: white;
+    padding: 40px;
+}
+#red{
+    color: rgb(194, 43, 88);
+}
+
+.hover-zoom {
+    transition: transform 0.3s ease-in-out; /* Smooth transition for the transform */
+  }
+  
+  .hover-zoom:hover {
+    transform: scale(1.1); /* Scale the image up to 110% of its original size on hover */
+  }

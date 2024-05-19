@@ -1,0 +1,20 @@
+#imsa{
+  width: 100px;
+  height: 50px;
+}
+
+.navbar-dark-custom {
+  background-color: #333;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-dark-custom .navbar-nav .nav-link {
+  color: #fff; 
+}
+
+.navbar-dark-custom .navbar-brand img {
+  filter: brightness(0) invert(1); 
+}

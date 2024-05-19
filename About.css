@@ -1,0 +1,21 @@
+#cols{
+    background-image: linear-gradient(to top, #88d3ce 0%, #6e45e2 100%);
+    height: 100vh;
+}
+#head1{
+    padding: 50px;
+    background: #FF0000;
+background: linear-gradient(to left, #FF0000 0%, #000000 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+    animation:focus-in-expand .8s cubic-bezier(.25,.46,.45,.94) both
+}
+@keyframes focus-in-expand{0%{letter-spacing:-.5em;filter:blur(12px);opacity:0}100%{filter:blur(0);opacity:1};}
+#head3{
+    color: orange;
+    padding-left: 30px;
+}
+#head5{
+    padding: 10px 30px 30px 30px;
+    line-height: 35px;
+}
